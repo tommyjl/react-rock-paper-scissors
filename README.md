@@ -1,7 +1,8 @@
 # Rock, paper, scissors
 
 This is a rock-paper-scissors game implemented in React. The rock, paper, and
-scissors are respectively displayed as red, blue, and green balls.
+scissors are respectively displayed as red, blue, and green balls. Click a ball
+to play.
 
 [Try the game](http://tommyjl.github.io/react-rock-paper-scissors).
 

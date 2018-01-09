@@ -11,8 +11,13 @@ const Layout = styled.div`
   color: white;
   display: grid;
   height: 100vh;
-  grid-template-rows: max-content 1fr max-content 1fr;
+  grid-template-rows: max-content 1fr max-content 1fr max-content;
   align-items: center;
+`;
+
+const A = styled.a`
+  color: tomato;
+  text-align: center;
 `;
 
 const Board = ({ opponentShape, selectShape, result, score }) => (
@@ -21,6 +26,9 @@ const Board = ({ opponentShape, selectShape, result, score }) => (
     <Opponent shape={opponentShape} />
     <Results result={result} score={score} />
     <You selectShape={selectShape} />
+    <A href="https://github.com/tommyjl/react-rock-paper-scissors">
+      [source code]
+    </A>
   </Layout>
 );
 

@@ -5,20 +5,8 @@ export default class Move {
     this.move = move;
   }
 
-  static Rock() {
-    return new Move("rock");
-  }
-
-  static Paper() {
-    return new Move("paper");
-  }
-
-  static Scissors() {
-    return new Move("scissors");
-  }
-
   static Random() {
-    const options = [Move.Rock(), Move.Paper(), Move.Scissors()];
+    const options = [new Move("rock"), new Move("paper"), new Move("scissors")];
     const randomChoice = Math.floor(Math.random() * options.length);
     return options[randomChoice];
   }

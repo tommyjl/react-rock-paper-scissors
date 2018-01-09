@@ -13,16 +13,13 @@ describe("Move", () => {
   });
 
   it("should instantiate with factory functions", () => {
-    expect(Move.Rock()).toBeDefined();
-    expect(Move.Paper()).toBeDefined();
-    expect(Move.Scissors()).toBeDefined();
     expect(Move.Random()).toBeDefined();
   });
 
   describe("playAgainst", () => {
-    const rock = Move.Rock();
-    const paper = Move.Paper();
-    const scissors = Move.Scissors();
+    const rock = new Move("rock");
+    const paper = new Move("paper");
+    const scissors = new Move("scissors");
 
     it("should tie if moves are the same", () => {
       expect(rock.playAgainst(rock)).toBe("tie");

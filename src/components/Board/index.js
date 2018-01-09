@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-
 import Title from "./Title";
 import Opponent from "../Player/Opponent";
 import Results from "./Results";

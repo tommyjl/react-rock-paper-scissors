@@ -20,7 +20,7 @@ function verboseResult(result) {
 }
 
 const Results = ({ result, score }) => {
-  const text = verboseResult(result) || score;
+  const text = result ? verboseResult(result) : score;
   return <ResultStyle>{text}</ResultStyle>;
 };
 

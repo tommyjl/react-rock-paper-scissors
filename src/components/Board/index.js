@@ -15,11 +15,11 @@ const Layout = styled.div`
   align-items: center;
 `;
 
-const Board = ({ opponentShape, selectShape, result }) => (
+const Board = ({ opponentShape, selectShape, result, score }) => (
   <Layout>
     <Title />
     <Opponent shape={opponentShape} />
-    <Results result={result} />
+    <Results result={result} score={score} />
     <You selectShape={selectShape} />
   </Layout>
 );
@@ -27,12 +27,14 @@ const Board = ({ opponentShape, selectShape, result }) => (
 Board.propTypes = {
   opponentShape: PropTypes.oneOf(["rock", "paper", "scissors"]),
   selectShape: PropTypes.func.isRequired,
-  result: PropTypes.string
+  result: PropTypes.string,
+  score: PropTypes.string
 };
 
 Board.defaultProps = {
   opponentShape: undefined,
-  result: undefined
+  result: undefined,
+  score: undefined
 };
 
 export default Board;

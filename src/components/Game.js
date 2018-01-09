@@ -7,7 +7,9 @@ class Game extends Component {
     super(props);
     this.state = {
       opponentShape: undefined,
-      result: undefined
+      result: undefined,
+      wins: 0,
+      losses: 0
     };
     this.selectShape = this.selectShape.bind(this);
   }
@@ -16,6 +18,12 @@ class Game extends Component {
     const yourMove = new Move(yourShape);
     const opponentMove = Move.Random();
     const result = yourMove.playAgainst(opponentMove);
+
+    if (result === "win") {
+      this.setState(prevState => ({ wins: prevState.wins + 1 }));
+    } else if (result === "loss") {
+      this.setState(prevState => ({ losses: prevState.losses + 1 }));
+    }
 
     this.setState({ opponentShape: opponentMove.move, result });
     this.resetState(500);
@@ -33,12 +41,13 @@ class Game extends Component {
   }
 
   render() {
-    const { result, opponentShape } = this.state;
+    const { result, opponentShape, wins, losses } = this.state;
     return (
       <Board
         opponentShape={opponentShape}
         selectShape={this.selectShape}
         result={result}
+        score={`${wins}–${losses}`}
       />
     );
   }

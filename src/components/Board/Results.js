@@ -19,16 +19,19 @@ function verboseResult(result) {
   return resultText;
 }
 
-const Results = ({ result }) => (
-  <ResultStyle>{verboseResult(result)}</ResultStyle>
-);
+const Results = ({ result, score }) => {
+  const text = verboseResult(result) || score;
+  return <ResultStyle>{text}</ResultStyle>;
+};
 
 Results.propTypes = {
-  result: PropTypes.string
+  result: PropTypes.string,
+  score: PropTypes.string
 };
 
 Results.defaultProps = {
-  result: undefined
+  result: undefined,
+  score: undefined
 };
 
 export default Results;
